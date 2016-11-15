@@ -1,29 +1,38 @@
+import containers.ErrorContainer;
 import containers.Task;
 import org.junit.Test;
-import resourse.PageResourseRestObject;
+import resourses.TasksRest;
 import testconfigs.BaseTest;
+
+import javax.ws.rs.core.Response;
+import java.util.Arrays;
+import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
-import static resourse.PageResourseRestObject.*;
+import static resourses.TasksRest.*;
 
 public class RESTfulTasksTest extends BaseTest {
 
+    String[] DEFAULT_TASKS = {"Task{description='This is my first task', done=false, title='First task', uri='http://localhost:5000/todo/api/v1.0/tasks/1'}",
+                              "Task{description='This is my second task', done=false, title='Second task', uri='http://localhost:5000/todo/api/v1.0/tasks/2'}"};
+
     @Test
     public void testUnauthorizedReadTasks() {
-        getUnauthorizedResponseAccess();
+        Response response = requestTo(TasksRest.uri).get();
 
-        assertEquals("Unauthorized access", getResponseAnswer());
+        assertEquals("Unauthorized access", response.readEntity(ErrorContainer.class).getError());
         assertEquals(403, getResponseStatus());
     }
 
     @Test
     public void testReadTasks() {
-        getAuthorizedResponceAccess();
+        Response response =  authorized(requestTo(uri)).get();
 
-        assertEquals(200, getResponseStatus());
-        assertEquals(2, getTasksSize());
-        assertEquals("First task", getTask(0).getTitle());
+        assertEquals(200, response.getStatus());
+
+        List<Task> actualTasks = TasksRest.get();
+        assertEquals(Arrays.asList(DEFAULT_TASKS), actualTasks);
     }
 
     @Test
@@ -57,7 +66,7 @@ public class RESTfulTasksTest extends BaseTest {
         assertEquals("this description was updated", receivedTask.getDescription());
         assertTrue(receivedTask.isDone());
         assertEquals("task was updated", receivedTask.getTitle());
-        assertEquals(PageResourseRestObject.URI + "/" + id, receivedTask.getUri());
+        assertEquals(TasksRest.uri + "/" + id, receivedTask.getUri());
     }
 
     @Test

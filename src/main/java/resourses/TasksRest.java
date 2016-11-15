@@ -1,9 +1,10 @@
-package resourse;
+package resourses;
 
 import containers.ErrorContainer;
 import containers.Task;
 import containers.TaskContainer;
 import containers.TasksContainer;
+import core.Configuration;
 
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -13,9 +14,9 @@ import javax.ws.rs.core.Response;
 import java.util.Base64;
 import java.util.List;
 
-public class PageResourseRestObject {
+public class TasksRest {
 
-    public static final String URI = "http://localhost:5000/todo/api/v1.0/tasks";
+    public static String uri = Configuration.baseUrl + "todo/api/v1.0/tasks";
     private static Response response;
 
     public static Invocation.Builder requestTo(String uri) {
@@ -27,15 +28,15 @@ public class PageResourseRestObject {
     }
 
     public static void getUnauthorizedResponseAccess() {
-        response =  requestTo(URI).get();
+        response =  requestTo(uri).get();
     }
 
     public static void getAuthorizedResponceAccess() {
-        response =  authorized(requestTo(URI)).get();
+        response =  authorized(requestTo(uri)).get();
     }
 
     public static void resetBase() {
-        authorized(requestTo(URI + "/reset")).get();
+        authorized(requestTo(uri + "/reset")).get();
     }
 
     public static String getResponseAnswer() {
@@ -59,16 +60,20 @@ public class PageResourseRestObject {
         return getTasks().size();
     }
 
+    public static List<Task> get() {
+        return getTasks();
+    }
+
     public static Task getTask(int id) {
         return getTasks().get(id);
     }
 
     public static void createTask(Task newTask) {
-        response = authorized(requestTo(URI)).post(Entity.entity(newTask, MediaType.APPLICATION_JSON));
+        response = authorized(requestTo(uri)).post(Entity.entity(newTask, MediaType.APPLICATION_JSON));
     }
 
     public static void deleteTask(int id) {
-        response = authorized(requestTo(URI + "/" + id)).delete();
+        response = authorized(requestTo(uri + "/" + id)).delete();
     }
 
     public static void updateTask(Task task) {

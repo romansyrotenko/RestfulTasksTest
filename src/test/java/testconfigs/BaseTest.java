@@ -2,7 +2,7 @@ package testconfigs;
 
 import org.junit.Before;
 
-import static resourse.PageResourseRestObject.resetBase;
+import static resourses.TasksRest.resetBase;
 
 public class BaseTest {
 
