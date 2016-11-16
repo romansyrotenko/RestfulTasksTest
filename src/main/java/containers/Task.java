@@ -1,6 +1,6 @@
 package containers;
 
-import resourses.TasksRest;
+import resourses.TasksApi;
 
 public class Task {
 
@@ -16,7 +16,7 @@ public class Task {
         this.description = description;
         this.done = done;
         this.title = title;
-        this.uri = TasksRest.uri + "/" + id;
+        this.uri = TasksApi.uri + "/" + id;
     }
 
     public Task(String title) {
@@ -77,7 +77,6 @@ public class Task {
         if (description != null ? !description.equals(task.description) : task.description != null) return false;
         if (title != null ? !title.equals(task.title) : task.title != null) return false;
         return uri != null ? uri.equals(task.uri) : task.uri == null;
-
     }
 
     @Override
