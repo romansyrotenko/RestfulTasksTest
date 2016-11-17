@@ -1,6 +1,7 @@
 #!flask/bin/python
 from flask import Flask, jsonify, abort, request, make_response, url_for
 from flask.ext.httpauth import HTTPBasicAuth
+import copy
 
 app = Flask(__name__, static_url_path = "")
 auth = HTTPBasicAuth()
@@ -24,7 +25,6 @@ def not_found(error):
 def not_found(error):
     return make_response(jsonify( { 'error': 'Not found' } ), 404)
 
-tasks_2 = []
 tasks = [
     {
         'id': 1,
@@ -40,7 +40,6 @@ tasks = [
     }
 ]
 
-import copy
 tasks_2 = copy.deepcopy(tasks)
 
 
@@ -72,7 +71,7 @@ def create_task():
     if not request.json or not 'title' in request.json:
         abort(400)
     task = {
-        'id': tasks[-1]['id'] + 1,
+        'id': 1 if len(tasks) == 0 else tasks[-1]['id'] + 1,
         'title': request.json['title'],
         'description': request.json.get('description', ""),
         'done': False
@@ -112,7 +111,6 @@ def delete_task(task_id):
 @auth.login_required
 def reset_tasks():
 	global tasks
-	global tasks_2
 	tasks = copy.deepcopy(tasks_2)
 	return make_response(jsonify( { 'reset is complete': 'OK' } ), 205)
 
