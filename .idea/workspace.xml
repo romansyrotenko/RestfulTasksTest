@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12d69192-3c56-462f-9474-9b362f90bbb1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/core/RestHelpers.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/testconfigs/BaseTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/containers/Task.class" afterPath="$PROJECT_DIR$/target/classes/containers/Task.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/RESTfulTasksTest.class" afterPath="$PROJECT_DIR$/target/test-classes/RESTfulTasksTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api-test.iml" afterPath="$PROJECT_DIR$/api-test.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rest-server/rest-server.py" afterPath="$PROJECT_DIR$/rest-server/rest-server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/containers/Task.java" afterPath="$PROJECT_DIR$/src/main/java/containers/Task.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resourses/TasksApi.java" afterPath="$PROJECT_DIR$/src/main/java/resourses/TasksApi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/RESTfulTasksTest.java" afterPath="$PROJECT_DIR$/src/test/java/RESTfulTasksTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/containers/ErrorContainer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/containers/Task.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/containers/TasksContainer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/core/Configuration.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/RESTfulTasksTest.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/testconfigs/BaseTest.class" afterPath="" />
     </list>
     <ignored path="api-test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +29,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RESTfulTasksTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RESTfulTasksTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/RESTfulTasksTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
@@ -48,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -1357,14 +1352,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/RESTfulTasksTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1374,6 +1361,14 @@
             <element signature="e#636#637#0" expanded="true" />
             <element signature="e#659#660#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
