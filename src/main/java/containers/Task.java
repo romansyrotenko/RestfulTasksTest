@@ -1,7 +1,5 @@
 package containers;
 
-import resourses.TasksApi;
-
 public class Task {
 
     String description;
@@ -12,11 +10,11 @@ public class Task {
     public Task() {
     }
 
-    public Task (String description, boolean done, String title, int id) {
+    public Task (String description, boolean done, String title, int id, String uri) {
         this.description = description;
         this.done = done;
         this.title = title;
-        this.uri = TasksApi.uri + "/" + id;
+        this.uri = uri + "/" + id;
     }
 
     public Task(String title) {

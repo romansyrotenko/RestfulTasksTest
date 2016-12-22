@@ -112,7 +112,7 @@ def delete_task(task_id):
 def reset_tasks():
 	global tasks
 	tasks = copy.deepcopy(tasks_2)
-	return make_response(jsonify( { 'reset is complete': 'OK' } ), 205)
+	return jsonify( { 'tasks': map(make_public_task, tasks) } )
 
 if __name__ == '__main__':
     app.run(debug = True)

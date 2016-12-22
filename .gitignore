@@ -1,7 +1,11 @@
 .idea
 *.iml
 target
+env
+flask
 build
 index.html
 index.html.*
 venv
+api-test.iml
+sys
